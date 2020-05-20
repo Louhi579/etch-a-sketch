@@ -9,6 +9,7 @@ let gridButton = document.querySelector('#set')
 
 gridButton.addEventListener("click", function(e) {
     let squares = prompt('Please choose grid size');
+    clearContainer(sketch);
     sketchStart(squares);
 });
 
@@ -40,5 +41,8 @@ function sketchStart(squares) {
     }
 
 
+}
+function clearContainer(container){
+    container.innerHTML = "";
 }
 
