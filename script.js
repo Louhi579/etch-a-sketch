@@ -5,9 +5,15 @@ let div;
 
 let squares = 16;
 sketchStart(squares);
+let gridButton = document.querySelector('#set')
 
+gridButton.addEventListener("click", function(e) {
+    let squares = prompt('Please choose grid size');
+    sketchStart(squares);
+});
 
 function sketchStart(squares) {
+    
     let totalSquares = squares * squares;
     let squaresWidth = (sketchWidth / squares) + 'px';
     let squaresHeight = (sketchHeight / squares) + 'px';
@@ -21,7 +27,9 @@ function sketchStart(squares) {
         sketch.appendChild(div);
     }
 
+    
     let paintClass = document.querySelectorAll('.paint');
+    
 
     for (let i = 0; i < paintClass.length; i++) {
         paintClass[i].addEventListener("mouseover", function (e) {
@@ -31,8 +39,6 @@ function sketchStart(squares) {
         })
     }
 
-    //sketch.addEventListener("mouseover", function(event) {
-    //    event.target.style.backgroundColor = "black";
-    //});
+
 }
 
